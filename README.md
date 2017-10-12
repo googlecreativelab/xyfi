@@ -1,3 +1,4 @@
+
 # Xyfi: BYO pointing device at a physical installation
 
 Xyfi (pronounced ex-Wi-Fi) is an experiment in using BYO devices at a physical installation. People connect their smartphone to the installation and use it as a pointing device to interact with a larger screen.
@@ -16,16 +17,16 @@ npm install
 npm start
 ```
 
-2. Open Chrome on a the computer and go to http://localhost:8080/screen.
+2. Open Chrome on a computer and go to http://localhost:8080/screen.
 
-3. On the Android phone open mobile chrome and go to <http://<the computer's IP>:8080 (make sure your phone is connected to the same Wi-Fi as the comptuer).
+3. On the Android phone open mobile chrome and go to <http://<the computer's IP>:8080 (make sure your phone is connected to the same Wi-Fi as the computer).
 
-4. Point at the computer screen and move the ciricle around at will.
+4. Point at the computer screen and move the circle around at will.
 
 
 ## Compatibility
 
-For the sake of simplicity this example works Anroid only. However, Xyfi does work on iOS with [gyroscope normalization](https://www.npmjs.com/package/gyronorm).
+For the sake of simplicity this example works Android only. However, Xyfi does work on iOS with [gyroscope normalization](https://www.npmjs.com/package/gyronorm).
 
 
 ## About the experiment
@@ -38,14 +39,14 @@ This experiment had three main requirements:
 
 ## How it works
 
-People join an Xyfi physical installation by connecting their smartphone to a typical Wi-Fi SSID. Upon connection a web page pops up with instructions to point at and interact with a larger screen such as a TV or projection.
+People join an Xyfi physical installation by connecting their smartphone to a typical Wi-Fi SSID. Upon connection, a web page pops up with instructions to point at and interact with a larger screen such as a TV or projection.
 
 
 ## Technologies we used
 
 Xyfi is an experiment in technological creativity. It is a collection of common, existing technology components and tools that work together to create something creative and interactive:
  * A MacOS based laptop
- * Javascript, HTML, CSS and JavaScript
+ * JavaScript, HTML, CSS and JavaScript
  * [Websockets](https://www.w3.org/TR/2011/WD-websockets-20110929)
  * A fairly typical Wi-Fi router capable of running custom firmware
  * [Captive portal technology](https://en.wikipedia.org/wiki/Captive_portal)
@@ -55,26 +56,26 @@ Xyfi is an experiment in technological creativity. It is a collection of common,
 
 ## Connecting
 
-Physical installations are generally used by people who are on their feet, and on the move. They may not have time for an arduous connection process. So it was critical that the connecting was quick, easy and familiar. We wanted the magic to happen instantly.
+Physical installations are generally used by people who are on their feet, and on the move. They may not have time for an arduous connection process. So, it was critical that the connecting was quick, easy and familiar. We wanted the magic to happen instantly.
 
 This ruled out many typical connection methods, such as installing a native app, typing cryptic codes into a text box or a typing full URL into a browser. [NFC](https://en.wikipedia.org/wiki/Near_field_communication) was potential, but is not well supported by iOS.
 
-In the end we decided to go with a Wi-Fi router and captive portal technology. Most smartphone users know how to connect to Wi-Fi, so there was plenty of familiarity there. We also loved the perceived sorcery of the captive portal popping up immediately.
+In the end, we decided to go with a Wi-Fi router and captive portal technology. Most smartphone users know how to connect to Wi-Fi, so there was plenty of familiarity there. We also loved the perceived sorcery of the captive portal popping up immediately.
 
-The great thing about captive portal technology is that it’s supported by all but the very oldest of smartphone/OS combinations.. Also, since a captive portal is essentially a web page, we can get the UI done with classic web development technologies.
+The great thing about captive portal technology is that it’s supported by all but the very oldest of smartphone/OS combinations. Also, since a captive portal is essentially a web page, we can get the UI done with classic web development technologies.
 
 There are many ways to configure a captive portal. For example, [nodogsplash](https://wiki.openwrt.org/doc/howto/wireless.hotspot.nodogsplash), which works with the custom firmware, [OpenWRT](https://openwrt.org). Or the firmware [DD-WRT](https://www.dd-wrt.com) has [its own set of captive portal solutions](https://www.dd-wrt.com/wiki/index.php/Captive_Portal) as well. 
 
 It is also possible to simulate your own captive portal by directing traffic to a single web page hosted on your local network. This can be accomplished with tools like [dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) and [iptables](https://en.wikipedia.org/wiki/Iptables).
 
-One caveat: On most mobile operating systems the captive portal application not an actual browser, but rather a browser-like native app with some limitations in features and even stability. For example, the captive portal in iOS can be a little laggy, and can even crash when rendering large complex web applications. So we learned to keep the remote control UI as simple as possible, mostly acting as a pointing mechanism that sends gyroscope information to the server.
+One caveat: On most mobile operating systems, the captive portal application not an actual browser, but rather a browser-like native app with some limitations in features and even stability. For example, the captive portal in iOS can be a little laggy, and can even crash when rendering large complex web applications. So we learned to keep the remote control UI as simple as possible, mostly acting as a pointing mechanism that sends gyroscope information to the server.
 
 
 ## Using the phone as a controller
 
 Once connected to Wi-Fi, the smartphone acts as a controller -- perhaps something along the lines of a simplified Wii Remote. This is accomplished by transferring gyroscope information from the phone via the captive portal to a local web server, and displaying a cursor on a larger screen or projection.
 
-At first we weren’t sure the gyroscope alone would be intuitive. Since it's only aware of the phone’s rotation, lateral or vertical movements have no effect. However, we were surprised at how well it worked. People had no problem making the connection between their phone and the cursor, and moved the cursor around the screen naturally without prompting.
+At first, we weren’t sure the gyroscope alone would be intuitive. Since it's only aware of the phone’s rotation, lateral or vertical movements have no effect. However, we were surprised at how well it worked. People had no problem making the connection between their phone and the cursor, and moved the cursor around the screen naturally without prompting.
 
 To create this sense of “pointing” we used the browser’s [DeviceOrientation event](https://w3c.github.io/deviceorientation/spec-source-orientation.html), which collects information from the gyroscope.
 
