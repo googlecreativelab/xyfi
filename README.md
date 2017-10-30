@@ -18,14 +18,14 @@ npm start
 
 2. Open Chrome on a the computer and go to http://localhost:8080/screen.
 
-3. On the Android phone open mobile chrome and go to <http://<the computer's IP>:8080 (make sure your phone is connected to the same Wi-Fi as the comptuer).
+3. On the Android phone open mobile chrome and go to <http://<the computer's IP>:8080 (make sure your phone is connected to the same Wi-Fi as the computer).
 
-4. Point at the computer screen and move the ciricle around at will.
+4. Point at the computer screen and move the circle around at will.
 
 
 ## Compatibility
 
-For the sake of simplicity this example works Anroid only. However, Xyfi does work on iOS with [gyroscope normalization](https://www.npmjs.com/package/gyronorm).
+For the sake of simplicity this example works on Android only. However, Xyfi does work on iOS with [gyroscope normalization](https://www.npmjs.com/package/gyronorm).
 
 
 ## About the experiment
@@ -61,7 +61,7 @@ This ruled out many typical connection methods, such as installing a native app,
 
 In the end we decided to go with a Wi-Fi router and captive portal technology. Most smartphone users know how to connect to Wi-Fi, so there was plenty of familiarity there. We also loved the perceived sorcery of the captive portal popping up immediately.
 
-The great thing about captive portal technology is that it’s supported by all but the very oldest of smartphone/OS combinations.. Also, since a captive portal is essentially a web page, we can get the UI done with classic web development technologies.
+The great thing about captive portal technology is that it is supported by all but the very oldest of smartphone/OS combinations. Also, since a captive portal is essentially a web page, we can get the UI done with classic web development technologies.
 
 There are many ways to configure a captive portal. For example, [nodogsplash](https://wiki.openwrt.org/doc/howto/wireless.hotspot.nodogsplash), which works with the custom firmware, [OpenWRT](https://openwrt.org). Or the firmware [DD-WRT](https://www.dd-wrt.com) has [its own set of captive portal solutions](https://www.dd-wrt.com/wiki/index.php/Captive_Portal) as well. 
 

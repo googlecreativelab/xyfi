@@ -18,7 +18,7 @@ require('./post-css/remote.css');
 
 var io = require('socket.io-client')('/remotes');
 
-// The angle at which we stop listening for input from rthe phone's gyro.
+// The angle at which we stop listening for input from the phone's gyro.
 var MAX_X_ANGLE = 20,
   MAX_Y_ANGLE = 24;
 
@@ -60,7 +60,7 @@ function handleDeviceOrientation(data) {
   }
 
   // Up/down rotation.
-  if (beta > 0 && beta <= MAX_Y_ANGLE 
+  if (beta > 0 && beta <= MAX_Y_ANGLE
     || beta < 0 && beta >= MAX_Y_ANGLE * -1) {
     y = 100 / MAX_Y_ANGLE * (beta * -1);
   } else {
@@ -104,7 +104,7 @@ function update() {
 // support it. For example, phones with no gyro.
 if (window.DeviceOrientationEvent) {
   window.addEventListener('deviceorientation', handleDeviceOrientation, false);
-  
+
   window.addEventListener('touchstart', handleTouchStartEvent, {
       capture: true,
       passive: false
@@ -127,7 +127,7 @@ if (window.DeviceOrientationEvent) {
       capture: true,
       passive: false
     }
-  );  
+  );
 } else {
   alert('This device is not supported.');
 }
