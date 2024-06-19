@@ -18,7 +18,7 @@
     "start": "node server"
   },
   "dependencies": {
-    "socket.io": "^2.0.3",
+    "socket.io": "^2.5.0",
     "socket.io-client": "^1.4.6"
   },
   "devDependencies": {
