@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "socket.io": "^2.0.3",
-    "socket.io-client": "^1.4.6"
+    "socket.io-client": "^4.7.2"
   },
   "devDependencies": {
     "ip": "^1.1.5",
