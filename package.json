@@ -22,7 +22,7 @@
     "socket.io-client": "^1.4.6"
   },
   "devDependencies": {
-    "ip": "^1.1.5",
+    "ip": "^1.1.9",
     "babel-core": "^6.26.0",
     "babel-jscs": "^2.0.5",
     "babel-loader": "^7.1.2",
