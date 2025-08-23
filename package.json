@@ -18,8 +18,8 @@
     "start": "node server"
   },
   "dependencies": {
-    "socket.io": "^2.0.3",
-    "socket.io-client": "^1.4.6"
+    "socket.io": "^2.5.1",
+    "socket.io-client": "^4.7.5"
   },
   "devDependencies": {
     "ip": "^1.1.5",
